@@ -12,12 +12,12 @@
   </mat-list-item>
 
   <mat-list>
-    <mat-list-item>
-      <img mat-list-avatar src="https://s3-us-west-2.amazonaws.com/star-wars-characters/luke-skywalker-sm.jpeg" />
-      <h3 mat-line>{{characters[0].name}}</h3>
-      <div mat-line>
-        <span>{{characters[0].gender}}</span>
-        <span>{{characters[0].birth_year}}</span>
+    <mat-list-item *ngFor="let character of characters">
+      <img mat-list-avatar src="{{character.avatar}}" />
+      <h3 mat-line>{{character.name}}</h3>
+      <div mat-line *ngIf="hideDetails">
+        <span>{{character.gender}} </span>
+        <span>{{character.birth_year}}</span>
       </div>
     </mat-list-item>
   </mat-list>

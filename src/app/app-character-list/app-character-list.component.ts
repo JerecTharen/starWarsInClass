@@ -7,6 +7,7 @@ import {Character} from "./characterInterface";
   styleUrls: ['./app-character-list.component.scss']
 })
 export class AppCharacterListComponent implements OnInit {
+  hideDetails: boolean = true;
   characters: Array<Character> = [
     {
       "id": "luke-skywalker",
