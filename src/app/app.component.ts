@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppCharacterListComponent} from './app-character-list/app-character-list.component';
 
 @Component({
   selector: 'app-root',
