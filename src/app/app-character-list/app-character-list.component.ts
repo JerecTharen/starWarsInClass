@@ -10,7 +10,7 @@ export class AppCharacterListComponent implements OnInit {
   hideDetails: boolean = true;
   forHidden: string = "Show Details";
   forShowing: string = "Hide Details";
-  characterFilter: string;
+  characterFilter: string = "";
   characters: Array<Character> = [
     {
       "id": "luke-skywalker",

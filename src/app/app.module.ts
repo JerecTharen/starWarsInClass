@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {
@@ -13,12 +13,16 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AppCharacterListComponent } from './app-character-list/app-character-list.component';
 import { AppSidenavContentComponent } from './app-sidenav-content/app-sidenav-content.component';
 import {FormsModule} from "@angular/forms";
+import { CharacterPipePipe } from './character/character-pipe.pipe';
+import { CharacterPipe } from './character/character.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppCharacterListComponent,
-    AppSidenavContentComponent
+    AppSidenavContentComponent,
+    CharacterPipePipe,
+    CharacterPipe
   ],
   imports: [
     BrowserModule,
