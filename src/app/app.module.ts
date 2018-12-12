@@ -12,6 +12,7 @@ import {
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AppCharacterListComponent } from './app-character-list/app-character-list.component';
 import { AppSidenavContentComponent } from './app-sidenav-content/app-sidenav-content.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AppSidenavContentComponent } from './app-sidenav-content/app-sidenav-co
     MatListModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

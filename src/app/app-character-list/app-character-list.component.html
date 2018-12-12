@@ -1,19 +1,23 @@
 <div class="my-content">
   <mat-toolbar>
     <mat-form-field class="search-filter">
-      <input matInput placeholder="Filter Characters...">
+      <input matInput placeholder="Filter Characters..." [(ngModel)]="characterFilter">
     </mat-form-field>
   </mat-toolbar>
 
   <mat-list-item>
-    <button color="accent" mat-raised-button>
-      <span>Show or Hide Details</span>
+    <button color="accent" mat-raised-button (click)="toggleDetails()">
+      <span *ngIf="!hideDetails">{{forHidden}}</span><span *ngIf="hideDetails">{{forShowing}}</span>
     </button>
+
+    <div>
+      <h1>{{ characterFilter }}</h1>
+    </div>
   </mat-list-item>
 
   <mat-list>
     <mat-list-item *ngFor="let character of characters">
-      <img mat-list-avatar src="{{character.avatar}}" />
+      <img mat-list-avatar [src]="character.avatar" />
       <h3 mat-line>{{character.name}}</h3>
       <div mat-line *ngIf="hideDetails">
         <span>{{character.gender}} </span>

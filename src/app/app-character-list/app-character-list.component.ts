@@ -8,6 +8,9 @@ import {Character} from "./characterInterface";
 })
 export class AppCharacterListComponent implements OnInit {
   hideDetails: boolean = true;
+  forHidden: string = "Show Details";
+  forShowing: string = "Hide Details";
+  characterFilter: string;
   characters: Array<Character> = [
     {
       "id": "luke-skywalker",
@@ -265,6 +268,9 @@ export class AppCharacterListComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+  toggleDetails(): void{
+    this.hideDetails = !this.hideDetails;
   }
 
 }
