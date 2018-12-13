@@ -22,6 +22,7 @@
       <div mat-line *ngIf="hideDetails">
         <span>{{character.gender}} </span>
         <span>{{character.birth_year}}</span>
+        <span><app-force-component [force]="character.force"></app-force-component></span>
       </div>
     </mat-list-item>
   </mat-list>

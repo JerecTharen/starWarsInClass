@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnChanges, SimpleChanges, OnDestroy, Output} from '@angular/core';
 import {Character} from "./characterInterface";
+import {ForceComponentComponent} from "../shared/force-component/force-component.component";
 
 @Component({
   selector: 'app-character-list',
   templateUrl: './app-character-list.component.html',
   styleUrls: ['./app-character-list.component.scss']
 })
-export class AppCharacterListComponent implements OnInit {
+export class AppCharacterListComponent {
+  // @Output() myVar: string = "hello there";
   hideDetails: boolean = true;
   forHidden: string = "Show Details";
   forShowing: string = "Hide Details";
@@ -264,10 +266,10 @@ export class AppCharacterListComponent implements OnInit {
       "avatar": "https://s3-us-west-2.amazonaws.com/star-wars-characters/padme-amidala-sm.jpeg",
       "img": "https://s3-us-west-2.amazonaws.com/star-wars-characters/padme-amidala-lg.jpeg"
     }
-  ]
+  ];
 
-
-  ngOnInit() {
+  constructor(){
+    // console.log('construct');
   }
   toggleDetails(): void{
     this.hideDetails = !this.hideDetails;

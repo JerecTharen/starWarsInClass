@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, OnChanges, OnInit} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {
   MatButtonModule, MatFormFieldControl,
-  MatFormFieldModule, MatInputModule,
+  MatFormFieldModule, MatIconModule, MatInputModule,
   MatListModule,
   MatSidenavModule,
   MatToolbarModule
@@ -15,6 +15,7 @@ import { AppSidenavContentComponent } from './app-sidenav-content/app-sidenav-co
 import {FormsModule} from "@angular/forms";
 import { CharacterPipePipe } from './character/character-pipe.pipe';
 import { CharacterPipe } from './character/character.pipe';
+import { ForceComponentComponent } from './shared/force-component/force-component.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CharacterPipe } from './character/character.pipe';
     AppCharacterListComponent,
     AppSidenavContentComponent,
     CharacterPipePipe,
-    CharacterPipe
+    CharacterPipe,
+    ForceComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { CharacterPipe } from './character/character.pipe';
     MatButtonModule,
     BrowserAnimationsModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
