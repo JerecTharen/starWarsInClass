@@ -3,10 +3,10 @@ import {NgModule, OnChanges, OnInit} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {
-  MatButtonModule, MatFormFieldControl,
+  MatButtonModule, MatDialogModule, MatFormFieldControl,
   MatFormFieldModule, MatIconModule, MatInputModule,
   MatListModule,
-  MatSidenavModule,
+  MatSidenavModule, MatSliderModule,
   MatToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import { CharacterPipePipe } from './character/character-pipe.pipe';
 import { CharacterPipe } from './character/character.pipe';
 import { ForceComponentComponent } from './shared/force-component/force-component.component';
+import { ForceChangeDialogComponent } from './shared/force-component/force-change-dialog/force-change-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ForceComponentComponent } from './shared/force-component/force-componen
     AppSidenavContentComponent,
     CharacterPipePipe,
     CharacterPipe,
-    ForceComponentComponent
+    ForceComponentComponent,
+    ForceChangeDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +38,11 @@ import { ForceComponentComponent } from './shared/force-component/force-componen
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatSliderModule
   ],
+  entryComponents: [ForceChangeDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

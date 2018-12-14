@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {MatDialog} from "@angular/material";
+import {ForceChangeDialogComponent} from "./force-change-dialog/force-change-dialog.component";
 
 @Component({
   selector: 'app-force-component',
@@ -7,14 +9,24 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ForceComponentComponent implements OnInit {
   @Input() force: number;
+  @Output() onForceChange: EventEmitter<number> = new EventEmitter();
   amountOfForce: number;
   forceString: string;
-  constructor() { }
+
+  constructor(private dialog: MatDialog) { }
+
+  onForceClick(){
+    this.dialog.open(ForceChangeDialogComponent, {
+      width: "400px",
+      data: {force: this.force}
+    });
+    console.log("it works");
+  }
 
   ngOnInit() {
     // console.log(this.force);
     this.force = this.force*12;
-    this.forceString = `${this.force}px`;
+    this.forceString = `${this.force}`;
     // console.log(this.forceString);
 
   }

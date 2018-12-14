@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Force</h1>
+<div mat-dialog-content>
+  <p>Select the amount of force for this character</p>
+  <mat-slider [(ngModel)]="force"
+  [max] = "5"
+  [min]=".5"
+  [step]=".5"
+  ></mat-slider>
+  <p>{{force}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="force" cdkFocusInitial>Ok</button>
+</div>
