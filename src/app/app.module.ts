@@ -20,6 +20,7 @@ import { ForceChangeDialogComponent } from './shared/force-component/force-chang
 import {HttpClientModule} from "@angular/common/http";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./in-memory-data.service";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {InMemoryDataService} from "./in-memory-data.service";
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    RouterModule
   ],
   entryComponents: [ForceChangeDialogComponent],
   providers: [],

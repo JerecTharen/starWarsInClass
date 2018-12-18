@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService} from "angular-in-memory-web-api";
 import {Character} from "./app-character-list/characterInterface";
-import {HttpClient} from "@angular/common/http";
+// import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class InMemoryDataService implements InMemoryDbService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor() { }
 
   createDb(){
     const characters: Array<Character> = [

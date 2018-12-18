@@ -6,8 +6,10 @@ import { Character} from "../app-character-list/characterInterface";
 })
 export class CharacterPipe implements PipeTransform {
 
-  transform(characters: Character[], args?: string): Character[] {
-    return characters.filter((character: Character) => character.name.includes(args));
+  transform(characters: Array<Character>, args?: string): Array<Character> {
+    if (characters !== undefined){
+      return characters.filter((character: Character) => character.name.includes(args));
+    }
   }
 
 }
