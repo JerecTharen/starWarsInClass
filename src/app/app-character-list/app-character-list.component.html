@@ -1,29 +1,38 @@
-<div class="my-content">
-  <mat-toolbar>
-    <mat-form-field class="search-filter">
-      <input matInput placeholder="Filter Characters..." [(ngModel)]="characterFilter">
-    </mat-form-field>
-  </mat-toolbar>
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav mode="side" opened>
+    <div class="my-content">
+      <mat-toolbar>
+        <mat-form-field class="search-filter">
+          <input matInput placeholder="Filter Characters..." [(ngModel)]="characterFilter">
+        </mat-form-field>
+      </mat-toolbar>
 
-  <mat-list-item>
-    <button color="accent" mat-raised-button (click)="toggleDetails()">
-      <span *ngIf="!hideDetails">{{forHidden}}</span><span *ngIf="hideDetails">{{forShowing}}</span>
-    </button>
+      <mat-list-item>
+        <button color="accent" mat-raised-button (click)="toggleDetails()">
+          <span *ngIf="!hideDetails">{{forHidden}}</span><span *ngIf="hideDetails">{{forShowing}}</span>
+        </button>
 
-    <div>
-      <h1>{{ characterFilter }}</h1>
+        <div>
+          <h1>{{ characterFilter }}</h1>
+        </div>
+      </mat-list-item>
+
+      <mat-list>
+        <mat-list-item *ngFor="let character of characters | character: characterFilter ">
+          <img mat-list-avatar [src]="character.avatar" [alt]="character.name | uppercase" />
+          <h3 mat-line>{{character.name}}</h3>
+          <div mat-line *ngIf="hideDetails">
+            <span>{{character.gender}} </span>
+            <span>{{character.birth_year}}</span>
+            <span><app-force-component [force]="character.force"></app-force-component></span>
+          </div>
+        </mat-list-item>
+      </mat-list>
     </div>
-  </mat-list-item>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
 
-  <mat-list>
-    <mat-list-item *ngFor="let character of characters | character: characterFilter ">
-      <img mat-list-avatar [src]="character.avatar" [alt]="character.name | uppercase" />
-      <h3 mat-line>{{character.name}}</h3>
-      <div mat-line *ngIf="hideDetails">
-        <span>{{character.gender}} </span>
-        <span>{{character.birth_year}}</span>
-        <span><app-force-component [force]="character.force"></app-force-component></span>
-      </div>
-    </mat-list-item>
-  </mat-list>
-</div>
+    <!--<app-sidenav-content></app-sidenav-content>-->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

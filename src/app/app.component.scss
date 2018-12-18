@@ -1,5 +1,10 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+mat-toolbar a {
+  color: inherit;
+  text-decoration: none;
+}
+
 mat-sidenav-container {
   position: absolute;
   top: 65px;

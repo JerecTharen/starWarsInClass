@@ -21,6 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./in-memory-data.service";
 import {RouterModule} from "@angular/router";
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './homepage/home/home.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {RouterModule} from "@angular/router";
     CharacterPipePipe,
     CharacterPipe,
     ForceComponentComponent,
-    ForceChangeDialogComponent
+    ForceChangeDialogComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import {RouterModule} from "@angular/router";
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    RouterModule
+    RouterModule,
+    AppRoutingModule
   ],
   entryComponents: [ForceChangeDialogComponent],
   providers: [],
