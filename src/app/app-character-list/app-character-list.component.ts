@@ -20,7 +20,7 @@ export class AppCharacterListComponent implements OnInit{
     // this.characterService = characterService;
   }
   ngOnInit(){
-    this.characters = this.characterService.getCharacters();
+    this.characterService.getCharacters().subscribe(characters=> this.characters = characters);
   }
   toggleDetails(): void{
     this.hideDetails = !this.hideDetails;

@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Character} from "../app-character-list/characterInterface";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+
+// import from the message service logging needed from the Tour of Heroes tutorial
+// import {tap} from "rxjs/operators";
 
 const characters: Array<Character> = [
   {
@@ -260,11 +265,15 @@ const characters: Array<Character> = [
   providedIn: 'root'
 })
 export class CharacterService {
+  private charactersUrl = "api/characters";
 
-  constructor() {
+  constructor(private http: HttpClient) {
 
   }
-  getCharacters(): Character[] {
-    return characters;
+  getCharacters(): Observable<Character[]> {
+    return this.http.get<Character[]>(this.charactersUrl);
   }
+  // getCharacterById(id: string): Observable<Character>{
+  //   return this.http.get<Character>(`${this.charactersUrl}/${id}`);
+  // }
 }

@@ -17,6 +17,9 @@ import { CharacterPipePipe } from './character/character-pipe.pipe';
 import { CharacterPipe } from './character/character.pipe';
 import { ForceComponentComponent } from './shared/force-component/force-component.component';
 import { ForceChangeDialogComponent } from './shared/force-component/force-change-dialog/force-change-dialog.component';
+import {HttpClientModule} from "@angular/common/http";
+import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryDataService} from "./in-memory-data.service";
 
 @NgModule({
   declarations: [
@@ -40,7 +43,11 @@ import { ForceChangeDialogComponent } from './shared/force-component/force-chang
     FormsModule,
     MatIconModule,
     MatDialogModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   entryComponents: [ForceChangeDialogComponent],
   providers: [],
