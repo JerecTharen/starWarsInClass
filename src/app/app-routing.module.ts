@@ -9,7 +9,6 @@ const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'characters', component: AppCharacterListComponent},
   {path: '', component: HomeComponent},
-  // {path: 'characters/:id', component: AppSidenavContentComponent}
 ];
 @NgModule({
   exports: [ RouterModule],

@@ -2,6 +2,7 @@ import {Component, OnInit, OnChanges, SimpleChanges, OnDestroy, Output} from '@a
 import {Character} from "./characterInterface";
 import {ForceComponentComponent} from "../shared/force-component/force-component.component";
 import {CharacterService} from "../character/character.service";
+import { DetailRoutingModule } from './detail-routing/detail-routing.module';
 
 @Component({
   selector: 'app-character-list',

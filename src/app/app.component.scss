@@ -1,9 +1,14 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+
 mat-toolbar a {
   color: inherit;
   text-decoration: none;
 }
+
+//.linkHover:hover{
+//  color: $myAccentColor;
+//}
 
 mat-sidenav-container {
   position: absolute;

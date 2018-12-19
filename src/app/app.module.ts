@@ -23,6 +23,8 @@ import {InMemoryDataService} from "./in-memory-data.service";
 import {RouterModule} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './homepage/home/home.component';
+import { CharacterDetailComponent } from './character/character-detail/character-detail.component';
+import { NoDetailComponent } from './character/character-detail/no-detail/no-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { HomeComponent } from './homepage/home/home.component';
     CharacterPipe,
     ForceComponentComponent,
     ForceChangeDialogComponent,
-    HomeComponent
+    HomeComponent,
+    CharacterDetailComponent,
+    NoDetailComponent
   ],
   imports: [
     BrowserModule,
